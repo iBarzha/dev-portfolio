@@ -4,7 +4,7 @@ import AchievementsSection from '../components/AchievementsSection';
 import ContactsSection from '../components/ContactsSection';
 
 const Home = () => (
-  <div className="bg-[#0f172a] text-white">
+  <div className="bg-dark-gradient min-h-screen text-white">
     <AboutSection />
     <ProjectsSection />
     <AchievementsSection />
