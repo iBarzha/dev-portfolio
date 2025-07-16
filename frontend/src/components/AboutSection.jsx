@@ -1,5 +1,7 @@
+import { UserCircle } from 'lucide-react';
+
 const AboutSection = () => (
-  <section className="bg-[#0f172a] text-white py-20 flex flex-col md:flex-row items-center max-w-6xl mx-auto px-4">
+  <section className="text-white py-20 flex flex-col md:flex-row items-center max-w-6xl mx-auto px-4">
     <div className="md:w-2/3 mb-6 md:mb-0">
       <h2 className="text-4xl font-semibold mb-4 bg-gradient-to-r from-[#f1f5f9] via-[#38BDF8] to-[#f1f5f9] bg-clip-text text-transparent">
         About Me
@@ -9,7 +11,7 @@ const AboutSection = () => (
         Currently, I’m focused on creating responsive web applications.
       </p>
     </div>
-    <img src="/assets/profile.svg" alt="profile" className="md:w-1/4 rounded-lg shadow-lg" />
+    <UserCircle size={48} className="text-[#f1f5f9]" />
   </section>
 );
 

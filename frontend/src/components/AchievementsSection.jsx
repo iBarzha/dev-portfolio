@@ -1,12 +1,13 @@
+import { Award, Star, Trophy, Medal } from 'lucide-react';
+
 const AchievementsSection = () => (
-  <section className="bg-[#0f172a] text-white py-20">
+  <section className="text-white py-20">
     <h2 className="text-4xl font-semibold text-center mb-8 text-[#f1f5f9]">Achievements</h2>
     <div className="flex justify-center gap-4 flex-wrap">
-      {/* Подставь настоящие иконки или изображения сертификатов */}
-      <div className="bg-[#1e293b] rounded-full p-4"><img src="/assets/icon1.svg" alt="" className="h-6" /></div>
-      <div className="bg-[#1e293b] rounded-full p-4"><img src="/assets/icon2.svg" alt="" className="h-6" /></div>
-      <div className="bg-[#1e293b] rounded-full p-4"><img src="/assets/icon3.svg" alt="" className="h-6" /></div>
-      {/* и т.д. */}
+        <Award size={24} className="text-[#f1f5f9]" />
+        <Star size={24} className="text-[#f1f5f9]" />
+        <Trophy size={24} className="text-[#f1f5f9]" />
+        <Medal size={24} className="text-[#f1f5f9]" />
     </div>
   </section>
 );
