@@ -93,7 +93,7 @@ const translations = {
       programmingLanguages: 'Programming Languages',
       technicalExpertise: 'Technical Skills',
       levels: {
-        expert: '1Expert',
+        expert: 'Expert',
         advanced: 'Advanced',
         intermediate: 'Intermediate',
         beginner: 'Beginner'
@@ -290,8 +290,8 @@ const translations = {
       technicalExpertise: 'Технічні Навички',
       levels: {
         expert: 'Впевнений',
-        advanced: 'Добре',
-        intermediate: 'Вивчаю',
+        advanced: 'Просунутий',
+        intermediate: 'проміжний',
         beginner: 'Початківець'
       },
       categories: {
@@ -387,7 +387,7 @@ const translations = {
 
     // Footer
     footer: {
-      copyright: '© 2025 Бардзєєв Антон. Створено з пристрастю до навчання.',
+      copyright: '© 2025 Барджеєв Антон. Створено з пристрастю до навчання.',
       status: {
         available: 'Відкритий до можливостей',
         remote: 'Відкритий до віддаленої роботи'
@@ -486,8 +486,8 @@ const translations = {
       technicalExpertise: 'Umiejętności Techniczne',
       levels: {
         expert: 'Pewny Siebie',
-        advanced: 'Dobrze',
-        intermediate: 'Uczę Się',
+        advanced: 'zaawansowany',
+        intermediate: 'pośredn',
         beginner: 'Początkujący'
       },
       categories: {
