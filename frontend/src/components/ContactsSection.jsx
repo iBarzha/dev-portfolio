@@ -7,25 +7,25 @@ const ContactsSection = () => {
   const contacts = [
     {
       icon: Github,
-      href: "https://github.com",
+      href: "https://github.com/iBarzha",
       label: t('contact.platforms.github'),
       gradient: "from-gray-600 to-gray-800"
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/anton-bardzheiev/",
       label: t('contact.platforms.linkedin'),
       gradient: "from-blue-500 to-blue-700"
     },
     {
       icon: Mail,
-      href: "mailto:example@mail.com",
+      href: "mailto:anton.bardzheiev@gmail.com",
       label: t('contact.platforms.email'),
       gradient: "from-red-500 to-red-700"
     },
     {
       icon: Send,
-      href: "https://t.me",
+      href: "https://t.me/bardzheiev",
       label: t('contact.platforms.telegram'),
       gradient: "from-cyan-500 to-cyan-700"
     },

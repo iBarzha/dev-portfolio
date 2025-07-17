@@ -11,9 +11,9 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState('about');
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'uk', name: 'Українська', flag: '🇺🇦' },
-    { code: 'pl', name: 'Polski', flag: '🇵🇱' }
+    { code: 'en', name: 'English'},
+    { code: 'uk', name: 'Українська'},
+    { code: 'pl', name: 'Polski'}
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language);
@@ -93,7 +93,6 @@ const Header = () => {
                   className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-sm"
                 >
                   <Globe size={16} />
-                  <span className="text-lg">{currentLanguage?.flag}</span>
                   <span className="hidden sm:inline">{currentLanguage?.code.toUpperCase()}</span>
                 </button>
 
@@ -111,7 +110,7 @@ const Header = () => {
                           language === lang.code ? 'bg-slate-100 dark:bg-slate-800 text-cyan-500' : 'text-slate-700 dark:text-slate-300'
                         }`}
                       >
-                        <span className="text-lg">{lang.flag}</span>
+                        <span className="text-lg">{lang.code.toUpperCase()}</span>
                         <span className="text-sm">{lang.name}</span>
                       </button>
                     ))}
@@ -166,7 +165,7 @@ const Header = () => {
                         language === lang.code ? 'bg-slate-100 dark:bg-slate-800 text-cyan-500' : 'text-slate-700 dark:text-slate-300'
                       }`}
                     >
-                      <span>{lang.flag}</span>
+                      <span>{lang.code.toUpperCase()}</span>
                       <span className="text-sm">{lang.name}</span>
                     </button>
                   ))}

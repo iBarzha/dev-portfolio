@@ -30,7 +30,7 @@ const Footer = () => {
 
           {/* Tech stack mini badges */}
           <div className="flex flex-wrap justify-center gap-2">
-            {['React', 'Node.js', 'Python', 'Django', 'MongoDB'].map((tech) => (
+            {['Django', 'Python', 'React', 'JavaScript', 'PostgreSQL'].map((tech) => (
               <span
                 key={tech}
                 className="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs rounded-full border border-slate-300/50 dark:border-slate-600/50 hover:scale-105 transition-transform duration-200"

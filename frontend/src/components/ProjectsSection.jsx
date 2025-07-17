@@ -386,11 +386,8 @@ const ProjectsSection = () => {
             {t('projects.description')}
           </p>
 
-          {/* Language indicator and refresh button */}
+          {/* refresh button */}
           <div className="flex items-center justify-center gap-4 mb-6">
-            <span className="text-sm text-slate-500 dark:text-slate-400">
-              Currently showing: <span className="font-semibold text-cyan-600 dark:text-cyan-400">{language.toUpperCase()}</span> projects
-            </span>
             <button
               onClick={refreshGitHubData}
               disabled={refreshing}
