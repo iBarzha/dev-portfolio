@@ -1,46 +1,98 @@
 import { useState } from 'react';
-import { Bitcoin, Database, Server, Layout, Zap, Code } from 'lucide-react';
+import { Database, Server, Layout, Zap, Code, Palette } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const StackSection = () => {
   const { t } = useLanguage();
-  const [hoveredSkill, setHoveredSkill] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState(null);
 
-  const skills = [
-    { name: 'JavaScript', level: 90, color: 'from-yellow-400 to-orange-500' },
-    { name: 'React', level: 85, color: 'from-blue-400 to-blue-600' },
-    { name: 'Node.js', level: 80, color: 'from-green-400 to-green-600' },
-    { name: 'Python', level: 75, color: 'from-purple-400 to-purple-600' },
-    { name: 'Django', level: 70, color: 'from-emerald-400 to-emerald-600' },
-    { name: 'MongoDB', level: 85, color: 'from-green-500 to-green-700' }
+  const programmingLanguages = [
+    {
+      name: 'Python',
+      expertise: 'Advanced',
+      color: 'from-blue-500 to-indigo-600',
+      bgColor: 'bg-blue-50 dark:bg-blue-950/30',
+      borderColor: 'border-blue-200 dark:border-blue-800',
+      icon: '🐍'
+    },
+    {
+      name: 'JavaScript',
+      expertise: 'Intermediate',
+      color: 'from-yellow-500 to-orange-500',
+      bgColor: 'bg-yellow-50 dark:bg-yellow-950/30',
+      borderColor: 'border-yellow-200 dark:border-yellow-800',
+      icon: '⚡'
+    },
+    {
+      name: 'Ruby',
+      expertise: 'Advanced',
+      color: 'from-red-500 to-pink-600',
+      bgColor: 'bg-red-50 dark:bg-red-950/30',
+      borderColor: 'border-red-200 dark:border-red-800',
+      icon: '💎'
+    }
   ];
 
-  const techStack = [
+  const techCategories = [
+    {
+      icon: Server,
+      category: "Backend",
+      title: t('skills.categories.backend.title'),
+      technologies: [
+        { name: "Django", level: "Advanced", color: "from-green-500 to-emerald-600" },
+        { name: "Ruby on Rails", level: "Advanced", color: "from-red-500 to-rose-600" }
+      ],
+      iconBg: "from-green-500 to-emerald-600",
+      description: t('skills.categories.backend.description')
+    },
     {
       icon: Code,
-      name: "Frontend",
-      tech: "React, Vue.js",
-      iconBg: "from-orange-500 to-red-500"
+      category: "Frontend",
+      title: t('skills.categories.frontend.title'),
+      technologies: [
+        { name: "React", level: "Intermediate", color: "from-blue-500 to-cyan-500" }
+      ],
+      iconBg: "from-blue-500 to-cyan-600",
+      description: t('skills.categories.frontend.description')
     },
     {
       icon: Database,
-      name: "Database",
-      tech: "MongoDB, PostgreSQL",
-      iconBg: "from-green-500 to-emerald-500"
+      category: "Database",
+      title: t('skills.categories.database.title'),
+      technologies: [
+        { name: "PostgreSQL", level: "Advanced", color: "from-blue-600 to-indigo-600" },
+        { name: "MySQL", level: "Intermediate", color: "from-orange-500 to-amber-600" },
+        { name: "SQLite", level: "Intermediate", color: "from-slate-500 to-slate-600" }
+      ],
+      iconBg: "from-purple-500 to-indigo-600",
+      description: t('skills.categories.database.description')
     },
     {
-      icon: Server,
-      name: "Backend",
-      tech: "Node.js, Django",
-      iconBg: "from-blue-500 to-cyan-500"
-    },
-    {
-      icon: Layout,
-      name: "Design",
-      tech: "Figma, Tailwind",
-      iconBg: "from-purple-500 to-pink-500"
-    },
+      icon: Palette,
+      category: "Design",
+      title: t('skills.categories.design.title'),
+      technologies: [
+        { name: "Tailwind CSS", level: "Advanced", color: "from-cyan-500 to-teal-600" },
+        { name: "Material UI", level: "Intermediate", color: "from-blue-500 to-blue-600" },
+        { name: "Bootstrap", level: "Intermediate", color: "from-purple-500 to-indigo-600" }
+      ],
+      iconBg: "from-pink-500 to-rose-600",
+      description: t('skills.categories.design.description')
+    }
   ];
+
+  const getLevelColor = (level) => {
+    switch (level) {
+      case 'Expert':
+        return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400';
+      case 'Advanced':
+        return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400';
+      case 'Intermediate':
+        return 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400';
+      default:
+        return 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400';
+    }
+  };
 
   return (
     <section id="stack" className="py-20 transition-all duration-300">
@@ -62,65 +114,128 @@ const StackSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Skills Progress Bars - No Container Background */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6 text-center">
-              {t('skills.proficiency')}
-            </h3>
-            {skills.map((skill, index) => (
+        {/* Programming Languages Section */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-8 text-center">
+            {t('skills.programmingLanguages')}
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {programmingLanguages.map((language, index) => (
               <div
-                key={skill.name}
-                className="group"
-                onMouseEnter={() => setHoveredSkill(skill.name)}
-                onMouseLeave={() => setHoveredSkill(null)}
+                key={language.name}
+                className={`group relative p-8 rounded-3xl ${language.bgColor} ${language.borderColor} border-2 hover:shadow-xl transition-all duration-500 hover:scale-105 overflow-hidden`}
+                onMouseEnter={() => setHoveredItem(language.name)}
+                onMouseLeave={() => setHoveredItem(null)}
               >
-                <div className="flex items-center justify-between mb-3">
-                  <h4 className="text-lg font-semibold text-slate-800 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                    {skill.name}
-                  </h4>
-                  <span className="text-sm font-bold text-slate-600 dark:text-slate-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-700">
-                    {skill.level}%
-                  </span>
-                </div>
-                <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-4 overflow-hidden shadow-inner">
-                  <div
-                    className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out relative overflow-hidden`}
-                    style={{
-                      width: `${skill.level}%`,
-                      transform: hoveredSkill === skill.name ? 'scaleY(1.1)' : 'scaleY(1)'
-                    }}
-                  >
-                    <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse"></div>
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${language.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+
+                <div className="relative z-10 text-center">
+                  {/* Icon */}
+                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {language.icon}
                   </div>
+
+                  {/* Language Name */}
+                  <h4 className="text-2xl font-bold text-slate-800 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text transition-all duration-300"
+                      style={{
+                        backgroundImage: hoveredItem === language.name ? `linear-gradient(to right, var(--tw-gradient-stops))` : 'none'
+                      }}>
+                    {language.name}
+                  </h4>
+
+                  {/* Expertise Level */}
+                  <span className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${getLevelColor(language.expertise)}`}>
+                    {t(`skills.levels.${language.expertise.toLowerCase()}`)}
+                  </span>
+
+                  {/* Animated underline */}
+                  <div className={`w-0 h-1 bg-gradient-to-r ${language.color} mx-auto mt-4 group-hover:w-20 transition-all duration-500 rounded-full`}></div>
                 </div>
               </div>
             ))}
           </div>
+        </div>
 
-          {/* Tech Stack Cards - No Container Background */}
-          <div className="grid grid-cols-2 gap-6">
-            {techStack.map((item, index) => (
+        {/* Technical Stack Categories */}
+        <div>
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-8 text-center">
+            {t('skills.technicalExpertise')}
+          </h3>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {techCategories.map((category, index) => (
               <div
-                key={index}
-                className="group relative rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden"
+                key={category.category}
+                className="group relative p-8 rounded-3xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] overflow-hidden"
+                onMouseEnter={() => setHoveredItem(category.category)}
+                onMouseLeave={() => setHoveredItem(null)}
               >
-                <div className="relative z-10 text-center">
-                  <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${item.iconBg} rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 shadow-lg`}>
-                    <item.icon size={32} className="text-white" />
+                {/* Background Effects */}
+                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${category.iconBg} opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity duration-500`}></div>
+
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className={`w-14 h-14 bg-gradient-to-br ${category.iconBg} rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 shadow-lg`}>
+                      <category.icon size={28} className="text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-slate-800 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                        {t(`skills.categories.${category.category.toLowerCase()}.name`)}
+                      </h4>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 font-medium">
+                        {category.title}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-slate-800 dark:text-white font-bold text-lg mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                    {item.name}
-                  </h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm font-medium">
-                    {item.tech}
+
+                  {/* Description */}
+                  <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                    {category.description}
                   </p>
 
-                  {/* Animated underline */}
-                  <div className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-3 group-hover:w-12 transition-all duration-300"></div>
+                  {/* Technologies */}
+                  <div className="space-y-3">
+                    {category.technologies.map((tech, techIndex) => (
+                      <div key={tech.name} className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300">
+                        <div className="flex items-center gap-3">
+                          <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${tech.color}`}></div>
+                          <span className="font-semibold text-slate-800 dark:text-white">
+                            {tech.name}
+                          </span>
+                        </div>
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${getLevelColor(tech.level)}`}>
+                          {t(`skills.levels.${tech.level.toLowerCase()}`)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Bottom accent line */}
+                  <div className={`w-0 h-1 bg-gradient-to-r ${category.iconBg} mt-6 group-hover:w-full transition-all duration-700 rounded-full`}></div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Skills Summary */}
+        <div className="mt-20 text-center">
+          <div className="inline-flex items-center gap-6 p-6 rounded-2xl bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-950/30 dark:to-blue-950/30 border border-cyan-200 dark:border-cyan-800">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">3</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400">{t('skills.summary.languages')}</div>
+            </div>
+            <div className="w-px h-8 bg-slate-300 dark:bg-slate-600"></div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">4</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400">{t('skills.summary.categories')}</div>
+            </div>
+            <div className="w-px h-8 bg-slate-300 dark:bg-slate-600"></div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">9</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400">{t('skills.summary.technologies')}</div>
+            </div>
           </div>
         </div>
       </div>
