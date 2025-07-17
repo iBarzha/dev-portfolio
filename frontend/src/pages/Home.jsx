@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import AboutSection from '../components/AboutSection';
 import ProjectsSection from '../components/ProjectsSection';
 import StackSection from '../components/StackSection';
-import AchievementsSection from '../components/AchievementsSection';
+import RoadmapSection from '../components/RoadmapSection';
 import ContactsSection from '../components/ContactsSection';
 import Footer from '../components/Footer';
 import ScrollProgress from '../components/ScrollProgress';
@@ -51,7 +51,7 @@ const Home = () => (
           </div>
 
           <div className="relative">
-            <AchievementsSection />
+            <RoadmapSection />
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
           </div>
 
