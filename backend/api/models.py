@@ -22,6 +22,13 @@ class Project(models.Model):
         ('other', 'Other'),
     ]
 
+    # Language choices - simple approach
+    LANGUAGE_CHOICES = [
+        ('en', 'English 🇺🇸'),
+        ('uk', 'Ukrainian 🇺🇦'),
+        ('pl', 'Polish 🇵🇱'),
+    ]
+
     # Basic fields (existing)
     name = models.CharField(max_length=100)
     github_url = models.URLField()
@@ -53,6 +60,14 @@ class Project(models.Model):
         default='other'
     )
 
+    # Language field - which language this project is for
+    language = models.CharField(
+        max_length=10,
+        choices=LANGUAGE_CHOICES,
+        default='en',
+        help_text="Which language version is this project for?"
+    )
+
     # Project details
     features = models.JSONField(default=list, blank=True, help_text="List of key features")
     challenges = models.TextField(blank=True, help_text="Main challenges faced")
@@ -72,10 +87,10 @@ class Project(models.Model):
     github_data_updated = models.DateTimeField(null=True, blank=True)
 
     class Meta:
-        ordering = ['order', '-created_at']
+        ordering = ['language', 'order', '-created_at']
 
     def __str__(self):
-        return self.name
+        return f"{self.name} ({self.get_language_display()})"
 
     @property
     def github_api_url(self):

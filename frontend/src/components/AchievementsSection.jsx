@@ -1,33 +1,36 @@
 import { Award, Star, Trophy, Medal } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const AchievementsSection = () => {
+  const { t } = useLanguage();
+
   const achievements = [
     {
       icon: Award,
       title: "Excellence",
       count: "50+",
-      desc: "Projects Completed",
+      desc: t('achievements.stats.projects'),
       gradient: "from-yellow-400 to-orange-500"
     },
     {
       icon: Star,
       title: "Quality",
       count: "99%",
-      desc: "Client Satisfaction",
+      desc: t('achievements.stats.satisfaction'),
       gradient: "from-blue-400 to-cyan-500"
     },
     {
       icon: Trophy,
       title: "Recognition",
       count: "15+",
-      desc: "Awards Won",
+      desc: t('achievements.stats.awards'),
       gradient: "from-purple-400 to-pink-500"
     },
     {
       icon: Medal,
       title: "Experience",
       count: "5+",
-      desc: "Years in Field",
+      desc: t('achievements.stats.experience'),
       gradient: "from-green-400 to-emerald-500"
     },
   ];
@@ -40,13 +43,15 @@ const AchievementsSection = () => {
             <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg">
               <Trophy className="text-white" size={24} />
             </div>
-            <span className="text-cyan-600 dark:text-cyan-400 text-sm font-bold tracking-wide uppercase">Achievements</span>
+            <span className="text-cyan-600 dark:text-cyan-400 text-sm font-bold tracking-wide uppercase">
+              {t('achievements.label')}
+            </span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-slate-800 via-purple-600 to-blue-600 dark:from-white dark:via-cyan-400 dark:to-blue-400 bg-clip-text text-transparent mb-4">
-            My Journey
+            {t('achievements.title')}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-            Milestones and accomplishments that define my professional growth
+            {t('achievements.description')}
           </p>
         </div>
 
@@ -83,19 +88,25 @@ const AchievementsSection = () => {
               <div className="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-2 group-hover:scale-110 transition-transform">
                 200K+
               </div>
-              <div className="text-slate-600 dark:text-slate-400 font-medium">Lines of Code</div>
+              <div className="text-slate-600 dark:text-slate-400 font-medium">
+                {t('achievements.stats.linesOfCode')}
+              </div>
             </div>
             <div className="group">
               <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2 group-hover:scale-110 transition-transform">
                 24/7
               </div>
-              <div className="text-slate-600 dark:text-slate-400 font-medium">Availability</div>
+              <div className="text-slate-600 dark:text-slate-400 font-medium">
+                {t('achievements.stats.availability')}
+              </div>
             </div>
             <div className="group">
               <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2 group-hover:scale-110 transition-transform">
                 100%
               </div>
-              <div className="text-slate-600 dark:text-slate-400 font-medium">Dedication</div>
+              <div className="text-slate-600 dark:text-slate-400 font-medium">
+                {t('achievements.stats.dedication')}
+              </div>
             </div>
           </div>
         </div>

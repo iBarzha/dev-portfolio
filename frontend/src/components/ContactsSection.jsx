@@ -1,29 +1,32 @@
 import { Github, Linkedin, Mail, Send } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ContactsSection = () => {
+  const { t } = useLanguage();
+
   const contacts = [
     {
       icon: Github,
       href: "https://github.com",
-      label: "GitHub",
+      label: t('contact.platforms.github'),
       gradient: "from-gray-600 to-gray-800"
     },
     {
       icon: Linkedin,
       href: "https://linkedin.com",
-      label: "LinkedIn",
+      label: t('contact.platforms.linkedin'),
       gradient: "from-blue-500 to-blue-700"
     },
     {
       icon: Mail,
       href: "mailto:example@mail.com",
-      label: "Email",
+      label: t('contact.platforms.email'),
       gradient: "from-red-500 to-red-700"
     },
     {
       icon: Send,
       href: "https://t.me",
-      label: "Telegram",
+      label: t('contact.platforms.telegram'),
       gradient: "from-cyan-500 to-cyan-700"
     },
   ];
@@ -36,13 +39,15 @@ const ContactsSection = () => {
             <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg">
               <Mail className="text-white" size={24} />
             </div>
-            <span className="text-cyan-600 dark:text-cyan-400 text-sm font-bold tracking-wide uppercase">Get in Touch</span>
+            <span className="text-cyan-600 dark:text-cyan-400 text-sm font-bold tracking-wide uppercase">
+              {t('contact.label')}
+            </span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-slate-800 via-blue-600 to-purple-600 dark:from-white dark:via-cyan-400 dark:to-blue-400 bg-clip-text text-transparent mb-4">
-            Let's Connect
+            {t('contact.title')}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-            Ready to collaborate? Let's discuss your next project and bring your ideas to life
+            {t('contact.description')}
           </p>
         </div>
 

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Bitcoin, Database, Server, Layout, Zap, Code } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const StackSection = () => {
+  const { t } = useLanguage();
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
   const skills = [
@@ -48,13 +50,15 @@ const StackSection = () => {
             <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg">
               <Zap className="text-white" size={24} />
             </div>
-            <span className="text-cyan-600 dark:text-cyan-400 text-sm font-bold tracking-wide uppercase">Skills</span>
+            <span className="text-cyan-600 dark:text-cyan-400 text-sm font-bold tracking-wide uppercase">
+              {t('skills.label')}
+            </span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-slate-800 via-blue-600 to-purple-600 dark:from-white dark:via-cyan-400 dark:to-blue-400 bg-clip-text text-transparent mb-4">
-            Technical Expertise
+            {t('skills.title')}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
+            {t('skills.description')}
           </p>
         </div>
 
@@ -62,7 +66,7 @@ const StackSection = () => {
           {/* Skills Progress Bars - No Container Background */}
           <div className="space-y-8">
             <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6 text-center">
-              Skill Proficiency
+              {t('skills.proficiency')}
             </h3>
             {skills.map((skill, index) => (
               <div

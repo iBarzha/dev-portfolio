@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { UserCircle, Sparkles, Code, Palette, Zap } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Typing Animation Component
 const TypingAnimation = ({ words, className = "" }) => {
@@ -36,6 +37,7 @@ const TypingAnimation = ({ words, className = "" }) => {
 };
 
 const AboutSection = () => {
+  const { t } = useLanguage();
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -110,6 +112,14 @@ const AboutSection = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const scrollToProjects = () => {
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToContact = () => {
+    document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="about" className="relative min-h-screen flex items-center justify-center overflow-hidden theme-transition">
       <canvas
@@ -122,43 +132,56 @@ const AboutSection = () => {
           <div className="space-y-6">
             <div className="flex items-center gap-3 mb-4">
               <Sparkles className="text-cyan-500 animate-pulse" size={24} />
-              <span className="text-cyan-500 text-sm font-medium tracking-wide uppercase">Welcome</span>
+              <span className="text-cyan-500 text-sm font-medium tracking-wide uppercase">
+                {t('about.welcome')}
+              </span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-tight mb-6 theme-transition">
-              I'm a{' '}
+              {t('about.title')}{' '}
               <TypingAnimation
-                words={['Full-Stack Developer', 'Problem Solver', 'Tech Enthusiast', 'Creative Coder']}
+                words={t('about.roles')}
                 className="bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 bg-clip-text text-transparent"
               />
             </h1>
 
             <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl theme-transition">
-              I craft exceptional digital experiences with modern technologies.
-              Passionate about creating responsive, user-friendly applications that solve real-world problems.
+              {t('about.description')}
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
               <div className="flex items-center gap-2 light-surface px-4 py-2 rounded-full shadow-lg backdrop-blur-sm theme-transition">
                 <Code className="text-cyan-500" size={16} />
-                <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">Clean Code</span>
+                <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">
+                  {t('about.badges.cleanCode')}
+                </span>
               </div>
               <div className="flex items-center gap-2 light-surface px-4 py-2 rounded-full shadow-lg backdrop-blur-sm theme-transition">
                 <Palette className="text-purple-500" size={16} />
-                <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">Modern Design</span>
+                <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">
+                  {t('about.badges.modernDesign')}
+                </span>
               </div>
               <div className="flex items-center gap-2 light-surface px-4 py-2 rounded-full shadow-lg backdrop-blur-sm theme-transition">
                 <Zap className="text-yellow-500" size={16} />
-                <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">Performance</span>
+                <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">
+                  {t('about.badges.performance')}
+                </span>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium rounded-full hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl btn-light-hover">
-                View My Work
+              <button
+                onClick={scrollToProjects}
+                className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium rounded-full hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl btn-light-hover"
+              >
+                {t('about.buttons.viewWork')}
               </button>
-              <button className="px-8 py-3 border-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-105 theme-transition btn-light-hover">
-                Get In Touch
+              <button
+                onClick={scrollToContact}
+                className="px-8 py-3 border-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-105 theme-transition btn-light-hover"
+              >
+                {t('about.buttons.getInTouch')}
               </button>
             </div>
           </div>
