@@ -94,22 +94,89 @@ const translations = {
       label: 'Skills',
       title: 'Technical Expertise',
       description: 'Technologies and tools I use to bring ideas to life',
-      proficiency: 'Skill Proficiency'
+      programmingLanguages: 'Programming Languages',
+      technicalExpertise: 'Technical Expertise',
+      levels: {
+        expert: 'Expert',
+        advanced: 'Advanced',
+        intermediate: 'Intermediate',
+        beginner: 'Beginner'
+      },
+      categories: {
+        backend: {
+          name: 'Backend',
+          title: 'Server-Side Development',
+          description: 'Building robust and scalable server applications'
+        },
+        frontend: {
+          name: 'Frontend',
+          title: 'User Interface Development',
+          description: 'Creating interactive and responsive user experiences'
+        },
+        database: {
+          name: 'Database',
+          title: 'Data Management',
+          description: 'Designing and optimizing database systems'
+        },
+        design: {
+          name: 'Design',
+          title: 'UI/UX Frameworks',
+          description: 'Crafting beautiful and functional interfaces'
+        }
+      },
+      summary: {
+        languages: 'Languages',
+        categories: 'Categories',
+        technologies: 'Technologies'
+      }
     },
 
-    // Achievements Section
-    achievements: {
-      label: 'Achievements',
-      title: 'My Journey',
-      description: 'Milestones and accomplishments that define my professional growth',
+    // Roadmap Section
+    roadmap: {
+      label: 'My Journey',
+      title: 'Development Roadmap',
+      description: 'My continuous learning journey and professional milestones in software development',
+      timeline: {
+        python: {
+          date: 'September 2020',
+          title: 'Started Learning Python',
+          description: 'Beginning my programming journey with Python fundamentals'
+        },
+        rails: {
+          date: 'December 2023',
+          title: 'Web Development with Ruby on Rails',
+          description: 'Diving into web development and learning the Rails framework'
+        },
+        firstProjects: {
+          date: 'January 2024',
+          title: 'First Rails Projects',
+          description: 'Working on real projects and gaining practical experience'
+        },
+        django: {
+          date: 'August 2024',
+          title: 'Django Development',
+          description: 'Expanding backend skills with Django framework'
+        },
+        javascript: {
+          date: 'November 2024',
+          title: 'JavaScript Journey Begins',
+          description: 'Starting frontend development with JavaScript'
+        },
+        react: {
+          date: 'January 2025',
+          title: 'React Development',
+          description: 'Mastering modern frontend development with React'
+        },
+        degree: {
+          date: 'July 2025',
+          title: "Bachelor's Degree",
+          description: 'Received my bachelor\'s degree in Computer Science'
+        }
+      },
       stats: {
-        projects: 'Projects Completed',
-        satisfaction: 'Client Satisfaction',
-        awards: 'Awards Won',
-        experience: 'Years in Field',
-        linesOfCode: 'Lines of Code',
-        availability: 'Availability',
-        dedication: 'Dedication'
+        yearsOfLearning: 'Years of Learning',
+        programmingLanguages: 'Programming Languages',
+        majorMilestones: 'Major Milestones'
       }
     },
 
@@ -232,22 +299,89 @@ const translations = {
       label: 'Навички',
       title: 'Технічна Експертиза',
       description: 'Технології та інструменти, які я використовую для втілення ідей',
-      proficiency: 'Рівень Навичок'
+      programmingLanguages: 'Мови Програмування',
+      technicalExpertise: 'Технічна Експертиза',
+      levels: {
+        expert: 'Експерт',
+        advanced: 'Просунутий',
+        intermediate: 'Середній',
+        beginner: 'Початківець'
+      },
+      categories: {
+        backend: {
+          name: 'Backend',
+          title: 'Серверна Розробка',
+          description: 'Створення надійних та масштабованих серверних додатків'
+        },
+        frontend: {
+          name: 'Frontend',
+          title: 'Розробка Інтерфейсів',
+          description: 'Створення інтерактивних та адаптивних користувацьких інтерфейсів'
+        },
+        database: {
+          name: 'База Даних',
+          title: 'Управління Даними',
+          description: 'Проектування та оптимізація систем баз даних'
+        },
+        design: {
+          name: 'Дизайн',
+          title: 'UI/UX Фреймворки',
+          description: 'Створення красивих та функціональних інтерфейсів'
+        }
+      },
+      summary: {
+        languages: 'Мов',
+        categories: 'Категорій',
+        technologies: 'Технологій'
+      }
     },
 
-    // Achievements Section
-    achievements: {
-      label: 'Досягнення',
-      title: 'Моя Подорож',
-      description: 'Віхи та досягнення, які визначають мій професійний ріст',
+    // Roadmap Section
+    roadmap: {
+      label: 'Моя Подорож',
+      title: 'Карта Розвитку',
+      description: 'Моя постійна подорож навчання та професійні віхи в розробці програмного забезпечення',
+      timeline: {
+        python: {
+          date: 'Вересень 2020',
+          title: 'Почав Вивчати Python',
+          description: 'Початок моєї подорожі в програмування з основ Python'
+        },
+        rails: {
+          date: 'Грудень 2023',
+          title: 'Веб-розробка з Ruby on Rails',
+          description: 'Поглиблення у веб-розробку та вивчення фреймворку Rails'
+        },
+        firstProjects: {
+          date: 'Січень 2024',
+          title: 'Перші Rails Проекти',
+          description: 'Робота над реальними проектами та отримання практичного досвіду'
+        },
+        django: {
+          date: 'Серпень 2024',
+          title: 'Розробка на Django',
+          description: 'Розширення backend навичок з фреймворком Django'
+        },
+        javascript: {
+          date: 'Листопад 2024',
+          title: 'Початок Подорожі з JavaScript',
+          description: 'Початок frontend розробки з JavaScript'
+        },
+        react: {
+          date: 'Січень 2025',
+          title: 'Розробка на React',
+          description: 'Освоєння сучасної frontend розробки з React'
+        },
+        degree: {
+          date: 'Липень 2025',
+          title: 'Ступінь Бакалавра',
+          description: 'Отримав ступінь бакалавра з комп\'ютерних наук'
+        }
+      },
       stats: {
-        projects: 'Завершених Проектів',
-        satisfaction: 'Задоволення Клієнтів',
-        awards: 'Отриманих Нагород',
-        experience: 'Років Досвіду',
-        linesOfCode: 'Рядків Коду',
-        availability: 'Доступність',
-        dedication: 'Відданість'
+        yearsOfLearning: 'Років Навчання',
+        programmingLanguages: 'Мов Програмування',
+        majorMilestones: 'Основних Віх'
       }
     },
 
@@ -370,22 +504,89 @@ const translations = {
       label: 'Umiejętności',
       title: 'Ekspertyza Techniczna',
       description: 'Technologie i narzędzia, których używam do realizacji pomysłów',
-      proficiency: 'Poziom Umiejętności'
+      programmingLanguages: 'Języki Programowania',
+      technicalExpertise: 'Ekspertyza Techniczna',
+      levels: {
+        expert: 'Ekspert',
+        advanced: 'Zaawansowany',
+        intermediate: 'Średniozaawansowany',
+        beginner: 'Początkujący'
+      },
+      categories: {
+        backend: {
+          name: 'Backend',
+          title: 'Rozwój Serwerowy',
+          description: 'Budowanie solidnych i skalowalnych aplikacji serwerowych'
+        },
+        frontend: {
+          name: 'Frontend',
+          title: 'Rozwój Interfejsów',
+          description: 'Tworzenie interaktywnych i responsywnych doświadczeń użytkownika'
+        },
+        database: {
+          name: 'Baza Danych',
+          title: 'Zarządzanie Danymi',
+          description: 'Projektowanie i optymalizacja systemów baz danych'
+        },
+        design: {
+          name: 'Design',
+          title: 'Frameworki UI/UX',
+          description: 'Tworzenie pięknych i funkcjonalnych interfejsów'
+        }
+      },
+      summary: {
+        languages: 'Języków',
+        categories: 'Kategorii',
+        technologies: 'Technologii'
+      }
     },
 
-    // Achievements Section
-    achievements: {
-      label: 'Osiągnięcia',
-      title: 'Moja Droga',
-      description: 'Kamienie milowe i osiągnięcia definiujące mój rozwój zawodowy',
+    // Roadmap Section
+    roadmap: {
+      label: 'Moja Droga',
+      title: 'Mapa Rozwoju',
+      description: 'Moja ciągła podróż w nauce i kamienie milowe w rozwoju oprogramowania',
+      timeline: {
+        python: {
+          date: 'Wrzesień 2020',
+          title: 'Rozpocząłem Naukę Python',
+          description: 'Początek mojej podróży programistycznej z podstawami Python'
+        },
+        rails: {
+          date: 'Grudzień 2023',
+          title: 'Rozwój Web z Ruby on Rails',
+          description: 'Zagłębianie się w rozwój web i nauka frameworka Rails'
+        },
+        firstProjects: {
+          date: 'Styczeń 2024',
+          title: 'Pierwsze Projekty Rails',
+          description: 'Praca nad rzeczywistymi projektami i zdobywanie praktycznego doświadczenia'
+        },
+        django: {
+          date: 'Sierpień 2024',
+          title: 'Rozwój Django',
+          description: 'Rozszerzanie umiejętności backend z frameworkiem Django'
+        },
+        javascript: {
+          date: 'Listopad 2024',
+          title: 'Początek Podróży z JavaScript',
+          description: 'Rozpoczęcie rozwoju frontend z JavaScript'
+        },
+        react: {
+          date: 'Styczeń 2025',
+          title: 'Rozwój React',
+          description: 'Opanowywanie nowoczesnego rozwoju frontend z React'
+        },
+        degree: {
+          date: 'Lipiec 2025',
+          title: 'Tytuł Licencjata',
+          description: 'Otrzymałem tytuł licencjata z informatyki'
+        }
+      },
       stats: {
-        projects: 'Ukończonych Projektów',
-        satisfaction: 'Zadowolenie Klientów',
-        awards: 'Zdobytych Nagród',
-        experience: 'Lat Doświadczenia',
-        linesOfCode: 'Linii Kodu',
-        availability: 'Dostępność',
-        dedication: 'Zaangażowanie'
+        yearsOfLearning: 'Lat Nauki',
+        programmingLanguages: 'Języków Programowania',
+        majorMilestones: 'Głównych Kamieni Milowych'
       }
     },
 
