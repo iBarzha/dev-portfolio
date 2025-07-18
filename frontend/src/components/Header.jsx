@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { UserCircle, Moon, Sun, Menu, X, Globe } from 'lucide-react';
+import { Moon, Sun, Menu, X, Globe } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -57,12 +57,8 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
-              <div className="relative">
-                <UserCircle size={32} className="text-cyan-500" />
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white dark:border-slate-900"></div>
-              </div>
               <span className="font-bold text-xl bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
-                {t('header.portfolio')}
+                Portfolio
               </span>
             </div>
 
