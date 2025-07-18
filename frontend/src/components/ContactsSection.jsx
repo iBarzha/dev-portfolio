@@ -46,9 +46,6 @@ const ContactsSection = () => {
           <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-slate-800 via-blue-600 to-purple-600 dark:from-white dark:via-cyan-400 dark:to-blue-400 bg-clip-text text-transparent mb-4">
             {t('contact.title')}
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-            {t('contact.description')}
-          </p>
         </div>
 
         {/* Contact Cards Grid */}

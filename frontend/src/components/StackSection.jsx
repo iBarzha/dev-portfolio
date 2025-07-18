@@ -13,7 +13,6 @@ const StackSection = () => {
   const programmingLanguages = [
     {
       name: 'Python',
-      expertise: 'Advanced',
       color: 'from-blue-500 to-indigo-600',
       bgColor: 'bg-blue-50 dark:bg-blue-950/30',
       borderColor: 'border-blue-200 dark:border-blue-800',
@@ -22,7 +21,6 @@ const StackSection = () => {
     },
     {
       name: 'JavaScript',
-      expertise: 'Intermediate',
       color: 'from-yellow-500 to-orange-500',
       bgColor: 'bg-yellow-50 dark:bg-yellow-950/30',
       borderColor: 'border-yellow-200 dark:border-yellow-800',
@@ -31,7 +29,6 @@ const StackSection = () => {
     },
     {
       name: 'Ruby',
-      expertise: 'Advanced',
       color: 'from-red-500 to-pink-600',
       bgColor: 'bg-red-50 dark:bg-red-950/30',
       borderColor: 'border-red-200 dark:border-red-800',
@@ -46,8 +43,8 @@ const StackSection = () => {
       category: "Backend",
       title: t('skills.categories.backend.title'),
       technologies: [
-        { name: "Django", level: "Advanced", color: "from-green-500 to-emerald-600", icon: SiDjango, iconColor: "#092e20" },
-        { name: "Ruby on Rails", level: "Advanced", color: "from-red-500 to-rose-600", icon: SiRubyonrails, iconColor: "#cc0000" }
+        { name: "Django", color: "from-green-500 to-emerald-600", icon: SiDjango, iconColor: "#092e20" },
+        { name: "Ruby on Rails", color: "from-red-500 to-rose-600", icon: SiRubyonrails, iconColor: "#cc0000" }
       ],
       iconBg: "from-green-500 to-emerald-600",
       description: t('skills.categories.backend.description')
@@ -57,7 +54,7 @@ const StackSection = () => {
       category: "Frontend",
       title: t('skills.categories.frontend.title'),
       technologies: [
-        { name: "React", level: "Intermediate", color: "from-blue-500 to-cyan-500", icon: SiReact, iconColor: "#61dafb" }
+        { name: "React", color: "from-blue-500 to-cyan-500", icon: SiReact, iconColor: "#61dafb" }
       ],
       iconBg: "from-blue-500 to-cyan-600",
       description: t('skills.categories.frontend.description')
@@ -67,9 +64,9 @@ const StackSection = () => {
       category: "Database",
       title: t('skills.categories.database.title'),
       technologies: [
-        { name: "PostgreSQL", level: "Advanced", color: "from-blue-600 to-indigo-600", icon: SiPostgresql, iconColor: "#336791" },
-        { name: "MySQL", level: "Intermediate", color: "from-orange-500 to-amber-600", icon: SiMysql, iconColor: "#4479a1" },
-        { name: "SQLite", level: "Intermediate", color: "from-slate-500 to-slate-600", icon: SiSqlite, iconColor: "#003b57" }
+        { name: "PostgreSQL", color: "from-blue-600 to-indigo-600", icon: SiPostgresql, iconColor: "#336791" },
+        { name: "MySQL", color: "from-orange-500 to-amber-600", icon: SiMysql, iconColor: "#4479a1" },
+        { name: "SQLite", color: "from-slate-500 to-slate-600", icon: SiSqlite, iconColor: "#003b57" }
       ],
       iconBg: "from-purple-500 to-indigo-600",
       description: t('skills.categories.database.description')
@@ -79,9 +76,9 @@ const StackSection = () => {
       category: "Design",
       title: t('skills.categories.design.title'),
       technologies: [
-        { name: "Tailwind CSS", level: "Advanced", color: "from-cyan-500 to-teal-600", icon: SiTailwindcss, iconColor: "#06b6d4" },
-        { name: "Material UI", level: "Intermediate", color: "from-blue-500 to-blue-600", icon: SiMui, iconColor: "#007fff" },
-        { name: "Bootstrap", level: "Intermediate", color: "from-purple-500 to-indigo-600", icon: SiBootstrap, iconColor: "#7952b3" }
+        { name: "Tailwind CSS", color: "from-cyan-500 to-teal-600", icon: SiTailwindcss, iconColor: "#06b6d4" },
+        { name: "Material UI", color: "from-blue-500 to-blue-600", icon: SiMui, iconColor: "#007fff" },
+        { name: "Bootstrap", color: "from-purple-500 to-indigo-600", icon: SiBootstrap, iconColor: "#7952b3" }
       ],
       iconBg: "from-pink-500 to-rose-600",
       description: t('skills.categories.design.description')
@@ -91,8 +88,8 @@ const StackSection = () => {
       category: "System",
       title: t('skills.categories.system.title'),
       technologies: [
-        { name: "Linux", level: "Advanced", color: "from-gray-600 to-gray-800", icon: SiLinux, iconColor: "#fcc624" },
-        { name: "Git", level: "Advanced", color: "from-orange-600 to-red-600", icon: SiGit, iconColor: "#f05032" }
+        { name: "Linux", color: "from-gray-600 to-gray-800", icon: SiLinux, iconColor: "#fcc624" },
+        { name: "Git", color: "from-orange-600 to-red-600", icon: SiGit, iconColor: "#f05032" }
       ],
       iconBg: "from-gray-600 to-gray-800",
       description: t('skills.categories.system.description')
@@ -102,27 +99,14 @@ const StackSection = () => {
       category: "Tools",
       title: t('skills.categories.tools.title'),
       technologies: [
-        { name: "PyCharm", level: "Advanced", color: "from-green-600 to-yellow-500", icon: SiPycharm, iconColor: "#000000" },
-        { name: "VS Code", level: "Advanced", color: "from-blue-600 to-cyan-500", icon: VscVscode, iconColor: "#007acc" },
-        { name: "Docker", level: "Intermediate", color: "from-blue-500 to-blue-700", icon: SiDocker, iconColor: "#2496ed" }
+        { name: "PyCharm", color: "from-green-600 to-yellow-500", icon: SiPycharm, iconColor: "#000000" },
+        { name: "VS Code", color: "from-blue-600 to-cyan-500", icon: VscVscode, iconColor: "#007acc" },
+        { name: "Docker", color: "from-blue-500 to-blue-700", icon: SiDocker, iconColor: "#2496ed" }
       ],
       iconBg: "from-indigo-500 to-purple-600",
       description: t('skills.categories.tools.description')
     }
   ];
-
-  const getLevelColor = (level) => {
-    switch (level) {
-      case 'Expert':
-        return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400';
-      case 'Advanced':
-        return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400';
-      case 'Intermediate':
-        return 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400';
-      default:
-        return 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400';
-    }
-  };
 
   return (
     <section id="stack" className="py-20 transition-all duration-300">
@@ -174,11 +158,6 @@ const StackSection = () => {
                     {language.name}
                   </h4>
 
-                  {/* Expertise Level */}
-                  <span className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${getLevelColor(language.expertise)}`}>
-                    {t(`skills.levels.${language.expertise.toLowerCase()}`)}
-                  </span>
-
                   {/* Animated underline */}
                   <div className={`w-0 h-1 bg-gradient-to-r ${language.color} mx-auto mt-4 group-hover:w-20 transition-all duration-500 rounded-full`}></div>
                 </div>
@@ -227,15 +206,10 @@ const StackSection = () => {
                   {/* Technologies */}
                   <div className="space-y-3">
                     {category.technologies.map((tech, techIndex) => (
-                      <div key={tech.name} className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300">
-                        <div className="flex items-center gap-3">
-                          <tech.icon size={20} color={tech.iconColor} />
-                          <span className="font-semibold text-slate-800 dark:text-white">
-                            {tech.name}
-                          </span>
-                        </div>
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${getLevelColor(tech.level)}`}>
-                          {t(`skills.levels.${tech.level.toLowerCase()}`)}
+                      <div key={tech.name} className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300">
+                        <tech.icon size={20} color={tech.iconColor} />
+                        <span className="font-semibold text-slate-800 dark:text-white">
+                          {tech.name}
                         </span>
                       </div>
                     ))}
