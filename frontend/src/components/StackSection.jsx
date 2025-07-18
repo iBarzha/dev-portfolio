@@ -1,5 +1,9 @@
 import { useState } from 'react';
-import { Database, Server, Layout, Zap, Code, Palette } from 'lucide-react';
+import { Database, Server, Zap, Code, Palette, Terminal } from 'lucide-react';
+import {
+  SiPython, SiJavascript, SiRuby, SiDjango, SiRubyonrails, SiReact, SiPostgresql, SiMysql, SiSqlite, SiTailwindcss,
+  SiMui, SiBootstrap, SiLinux, SiGit, SiPycharm, SiDocker} from 'react-icons/si';
+import { VscVscode } from "react-icons/vsc";
 import { useLanguage } from '../contexts/LanguageContext';
 
 const StackSection = () => {
@@ -13,7 +17,8 @@ const StackSection = () => {
       color: 'from-blue-500 to-indigo-600',
       bgColor: 'bg-blue-50 dark:bg-blue-950/30',
       borderColor: 'border-blue-200 dark:border-blue-800',
-      icon: '🐍'
+      icon: SiPython,
+      iconColor: '#3776ab'
     },
     {
       name: 'JavaScript',
@@ -21,7 +26,8 @@ const StackSection = () => {
       color: 'from-yellow-500 to-orange-500',
       bgColor: 'bg-yellow-50 dark:bg-yellow-950/30',
       borderColor: 'border-yellow-200 dark:border-yellow-800',
-      icon: '⚡'
+      icon: SiJavascript,
+      iconColor: '#f7df1e'
     },
     {
       name: 'Ruby',
@@ -29,7 +35,8 @@ const StackSection = () => {
       color: 'from-red-500 to-pink-600',
       bgColor: 'bg-red-50 dark:bg-red-950/30',
       borderColor: 'border-red-200 dark:border-red-800',
-      icon: '💎'
+      icon: SiRuby,
+      iconColor: '#cc342d'
     }
   ];
 
@@ -39,8 +46,8 @@ const StackSection = () => {
       category: "Backend",
       title: t('skills.categories.backend.title'),
       technologies: [
-        { name: "Django", level: "Advanced", color: "from-green-500 to-emerald-600" },
-        { name: "Ruby on Rails", level: "Advanced", color: "from-red-500 to-rose-600" }
+        { name: "Django", level: "Advanced", color: "from-green-500 to-emerald-600", icon: SiDjango, iconColor: "#092e20" },
+        { name: "Ruby on Rails", level: "Advanced", color: "from-red-500 to-rose-600", icon: SiRubyonrails, iconColor: "#cc0000" }
       ],
       iconBg: "from-green-500 to-emerald-600",
       description: t('skills.categories.backend.description')
@@ -50,7 +57,7 @@ const StackSection = () => {
       category: "Frontend",
       title: t('skills.categories.frontend.title'),
       technologies: [
-        { name: "React", level: "Intermediate", color: "from-blue-500 to-cyan-500" }
+        { name: "React", level: "Intermediate", color: "from-blue-500 to-cyan-500", icon: SiReact, iconColor: "#61dafb" }
       ],
       iconBg: "from-blue-500 to-cyan-600",
       description: t('skills.categories.frontend.description')
@@ -60,9 +67,9 @@ const StackSection = () => {
       category: "Database",
       title: t('skills.categories.database.title'),
       technologies: [
-        { name: "PostgreSQL", level: "Advanced", color: "from-blue-600 to-indigo-600" },
-        { name: "MySQL", level: "Intermediate", color: "from-orange-500 to-amber-600" },
-        { name: "SQLite", level: "Intermediate", color: "from-slate-500 to-slate-600" }
+        { name: "PostgreSQL", level: "Advanced", color: "from-blue-600 to-indigo-600", icon: SiPostgresql, iconColor: "#336791" },
+        { name: "MySQL", level: "Intermediate", color: "from-orange-500 to-amber-600", icon: SiMysql, iconColor: "#4479a1" },
+        { name: "SQLite", level: "Intermediate", color: "from-slate-500 to-slate-600", icon: SiSqlite, iconColor: "#003b57" }
       ],
       iconBg: "from-purple-500 to-indigo-600",
       description: t('skills.categories.database.description')
@@ -72,12 +79,35 @@ const StackSection = () => {
       category: "Design",
       title: t('skills.categories.design.title'),
       technologies: [
-        { name: "Tailwind CSS", level: "Advanced", color: "from-cyan-500 to-teal-600" },
-        { name: "Material UI", level: "Intermediate", color: "from-blue-500 to-blue-600" },
-        { name: "Bootstrap", level: "Intermediate", color: "from-purple-500 to-indigo-600" }
+        { name: "Tailwind CSS", level: "Advanced", color: "from-cyan-500 to-teal-600", icon: SiTailwindcss, iconColor: "#06b6d4" },
+        { name: "Material UI", level: "Intermediate", color: "from-blue-500 to-blue-600", icon: SiMui, iconColor: "#007fff" },
+        { name: "Bootstrap", level: "Intermediate", color: "from-purple-500 to-indigo-600", icon: SiBootstrap, iconColor: "#7952b3" }
       ],
       iconBg: "from-pink-500 to-rose-600",
       description: t('skills.categories.design.description')
+    },
+    {
+      icon: Terminal,
+      category: "System",
+      title: t('skills.categories.system.title'),
+      technologies: [
+        { name: "Linux", level: "Advanced", color: "from-gray-600 to-gray-800", icon: SiLinux, iconColor: "#fcc624" },
+        { name: "Git", level: "Advanced", color: "from-orange-600 to-red-600", icon: SiGit, iconColor: "#f05032" }
+      ],
+      iconBg: "from-gray-600 to-gray-800",
+      description: t('skills.categories.system.description')
+    },
+    {
+      icon: Code,
+      category: "Tools",
+      title: t('skills.categories.tools.title'),
+      technologies: [
+        { name: "PyCharm", level: "Advanced", color: "from-green-600 to-yellow-500", icon: SiPycharm, iconColor: "#000000" },
+        { name: "VS Code", level: "Advanced", color: "from-blue-600 to-cyan-500", icon: VscVscode, iconColor: "#007acc" },
+        { name: "Docker", level: "Intermediate", color: "from-blue-500 to-blue-700", icon: SiDocker, iconColor: "#2496ed" }
+      ],
+      iconBg: "from-indigo-500 to-purple-600",
+      description: t('skills.categories.tools.description')
     }
   ];
 
@@ -131,9 +161,9 @@ const StackSection = () => {
                 <div className={`absolute inset-0 bg-gradient-to-br ${language.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
 
                 <div className="relative z-10 text-center">
-                  {/* Icon */}
-                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {language.icon}
+                  {/* Real Technology Icon */}
+                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                    <language.icon size={48} color={language.iconColor} />
                   </div>
 
                   {/* Language Name */}
@@ -162,7 +192,7 @@ const StackSection = () => {
           <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-8 text-center">
             {t('skills.technicalExpertise')}
           </h3>
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-8">
             {techCategories.map((category, index) => (
               <div
                 key={category.category}
@@ -199,7 +229,7 @@ const StackSection = () => {
                     {category.technologies.map((tech, techIndex) => (
                       <div key={tech.name} className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300">
                         <div className="flex items-center gap-3">
-                          <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${tech.color}`}></div>
+                          <tech.icon size={20} color={tech.iconColor} />
                           <span className="font-semibold text-slate-800 dark:text-white">
                             {tech.name}
                           </span>
@@ -228,12 +258,12 @@ const StackSection = () => {
             </div>
             <div className="w-px h-8 bg-slate-300 dark:bg-slate-600"></div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">4</div>
+              <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">6</div>
               <div className="text-sm text-slate-600 dark:text-slate-400">{t('skills.summary.categories')}</div>
             </div>
             <div className="w-px h-8 bg-slate-300 dark:bg-slate-600"></div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">9</div>
+              <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">14</div>
               <div className="text-sm text-slate-600 dark:text-slate-400">{t('skills.summary.technologies')}</div>
             </div>
           </div>

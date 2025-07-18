@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { UserCircle, Sparkles, Code, Palette, Zap } from 'lucide-react';
+import { Cat, Sparkles, Code, Palette, Zap } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 // Typing Animation Component
@@ -175,7 +175,7 @@ const AboutSection = () => {
 
               {/* Main avatar container */}
               <div className="relative w-full h-full bg-gradient-to-br from-slate-50/90 dark:from-slate-800/90 to-slate-100/90 dark:to-slate-900/90 rounded-full flex items-center justify-center border-2 border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm theme-transition">
-                <UserCircle size={120} className="text-cyan-500 group-hover:scale-110 transition-transform duration-500" />
+                <Cat size={120} className="text-cyan-500 group-hover:scale-110 transition-transform duration-500" />
               </div>
 
               {/* Floating elements */}

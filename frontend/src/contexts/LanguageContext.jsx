@@ -27,20 +27,24 @@ const translations = {
         learning: 'Always Learning',
         creative: 'Creative Thinker',
         motivated: 'Self Motivated'
+      },
+      buttons: {
+        viewWork: 'View My Work',
+        getInTouch: 'Get In Touch'
       }
     },
 
     // Projects Section
     projects: {
       label: 'Portfolio',
-      title: 'My Projects',
-      description: 'Projects I\'ve built while learning and practicing programming',
+      title: 'Featured Projects',
+      description: 'A collection of projects that showcase my skills and passion for development',
       refreshButton: 'Refresh GitHub Data',
       refreshing: 'Refreshing...',
       clickDetails: 'Click for details',
       status: {
-        production: 'Live',
-        development: 'In Progress',
+        production: 'Production',
+        development: 'Active Development',
         completed: 'Completed',
         archived: 'Archived'
       },
@@ -88,10 +92,10 @@ const translations = {
     // Skills Section
     skills: {
       label: 'Skills',
-      title: 'What I Know',
-      description: 'Technologies I\'ve learned and worked with',
+      title: 'Technical Expertise',
+      description: 'Technologies and tools I use to bring ideas to life',
       programmingLanguages: 'Programming Languages',
-      technicalExpertise: 'Technical Skills',
+      technicalExpertise: 'Technical Expertise',
       levels: {
         expert: 'Expert',
         advanced: 'Advanced',
@@ -102,22 +106,32 @@ const translations = {
         backend: {
           name: 'Backend',
           title: 'Server-Side Development',
-          description: 'Building the behind-the-scenes parts of applications'
+          description: 'Building robust and scalable server applications'
         },
         frontend: {
           name: 'Frontend',
           title: 'User Interface Development',
-          description: 'Creating what users see and interact with'
+          description: 'Creating interactive and responsive user experiences'
         },
         database: {
           name: 'Database',
           title: 'Data Management',
-          description: 'Storing and organizing information'
+          description: 'Designing and optimizing database systems'
         },
         design: {
           name: 'Design',
-          title: 'UI/UX Tools',
-          description: 'Making applications look good and work well'
+          title: 'UI/UX Frameworks',
+          description: 'Crafting beautiful and functional interfaces'
+        },
+        system: {
+          name: 'System',
+          title: 'System Administration',
+          description: 'Managing and configuring operating systems and development tools'
+        },
+        tools: {
+          name: 'Tools',
+          title: 'Development Tools',
+          description: 'IDEs, editors, and development environment tools for efficient coding'
         }
       },
       summary: {
@@ -130,43 +144,43 @@ const translations = {
     // Roadmap Section
     roadmap: {
       label: 'My Journey',
-      title: 'Learning Path',
-      description: 'My journey in learning programming and computer science',
+      title: 'Development Roadmap',
+      description: 'My continuous learning journey and professional milestones in software development',
       timeline: {
         python: {
           date: 'September 2020',
           title: 'Started Learning Python',
-          description: 'First programming language - learned basics and fundamentals'
+          description: 'Beginning my programming journey with Python fundamentals'
         },
         rails: {
           date: 'December 2023',
           title: 'Web Development with Ruby on Rails',
-          description: 'Started building web applications'
+          description: 'Diving into web development and learning the Rails framework'
         },
         firstProjects: {
           date: 'January 2024',
           title: 'First Rails Projects',
-          description: 'Built my first real applications and learned from mistakes'
+          description: 'Working on real projects and gaining practical experience'
         },
         django: {
           date: 'August 2024',
           title: 'Django Development',
-          description: 'Expanded knowledge with another web framework'
+          description: 'Expanding backend skills with Django framework'
         },
         javascript: {
           date: 'November 2024',
           title: 'JavaScript Journey Begins',
-          description: 'Started learning frontend development'
+          description: 'Starting frontend development with JavaScript'
         },
         react: {
           date: 'January 2025',
           title: 'React Development',
-          description: 'Learning modern frontend with React'
+          description: 'Mastering modern frontend development with React'
         },
         degree: {
           date: 'July 2025',
           title: "Bachelor's Degree",
-          description: 'Graduated with a degree in Computer Science'
+          description: 'Received my bachelor\'s degree in Computer Science'
         }
       },
       stats: {
@@ -180,7 +194,7 @@ const translations = {
     contact: {
       label: 'Get in Touch',
       title: "Let's Connect",
-      description: 'Feel free to reach out if you want to chat about programming, projects, or opportunities',
+      description: 'Ready to collaborate? Let\'s discuss your next project and bring your ideas to life',
       platforms: {
         github: 'GitHub',
         linkedin: 'LinkedIn',
@@ -191,15 +205,16 @@ const translations = {
 
     // Footer
     footer: {
-      copyright: '© 2025 Bardzheiev Anton. Built with passion for learning.',
+      copyright: '© 2025 Bardzheiev Anton. Crafted with passion and modern technologies.',
       status: {
-        available: 'Open to opportunities',
-        remote: 'Open to remote work'
+        available: 'Available for new projects',
+        remote: 'Remote work friendly'
       }
     },
 
     // Loading & Common
     common: {
+      loading: 'Loading...',
       loadingProjects: 'Loading projects...'
     }
   },
@@ -227,20 +242,24 @@ const translations = {
         learning: 'Постійно Вчуся',
         creative: 'Креативно Мислю',
         motivated: 'Самомотивований'
+      },
+      buttons: {
+        viewWork: 'Переглянути Роботи',
+        getInTouch: 'Зв\'язатися'
       }
     },
 
     // Projects Section
     projects: {
       label: 'Портфоліо',
-      title: 'Мої Проекти',
-      description: 'Проекти, які я створив під час навчання та практики програмування',
+      title: 'Кращі Проекти',
+      description: 'Колекція проектів, які демонструють мої навички та пристрасть до розробки',
       refreshButton: 'Оновити GitHub Дані',
       refreshing: 'Оновлення...',
       clickDetails: 'Натисніть для деталей',
       status: {
-        production: 'Робочий',
-        development: 'В Процесі',
+        production: 'У Виробництві',
+        development: 'Активна Розробка',
         completed: 'Завершено',
         archived: 'Архівовано'
       },
@@ -265,6 +284,9 @@ const translations = {
         projectDetails: 'Деталі Проекту',
         category: 'Категорія',
         created: 'Створено',
+        size: 'Розмір',
+        license: 'Ліцензія',
+        topics: 'Теми',
         liveDemo: 'Жива Демо',
         viewCode: 'Переглянути Код'
       },
@@ -274,6 +296,7 @@ const translations = {
         watchers: 'Спостерігачі',
         primaryLanguage: 'Основна Мова',
         lastCommit: 'Останній Коміт',
+        openIssues: 'Відкриті Проблеми'
       },
       actions: {
         code: 'Код',
@@ -284,36 +307,46 @@ const translations = {
     // Skills Section
     skills: {
       label: 'Навички',
-      title: 'Що Я Знаю',
-      description: 'Технології, які я вивчив та з якими працював',
+      title: 'Технічна Експертиза',
+      description: 'Технології та інструменти, які я використовую для втілення ідей',
       programmingLanguages: 'Мови Програмування',
-      technicalExpertise: 'Технічні Навички',
+      technicalExpertise: 'Технічна Експертиза',
       levels: {
-        expert: 'Впевнений',
+        expert: 'Експерт',
         advanced: 'Просунутий',
-        intermediate: 'проміжний',
+        intermediate: 'Середній',
         beginner: 'Початківець'
       },
       categories: {
         backend: {
           name: 'Backend',
           title: 'Серверна Розробка',
-          description: 'Створення серверної частини додатків'
+          description: 'Створення надійних та масштабованих серверних додатків'
         },
         frontend: {
           name: 'Frontend',
           title: 'Розробка Інтерфейсів',
-          description: 'Створення того, що бачать та з чим взаємодіють користувачі'
+          description: 'Створення інтерактивних та адаптивних користувацьких інтерфейсів'
         },
         database: {
           name: 'База Даних',
           title: 'Управління Даними',
-          description: 'Зберігання та організація інформації'
+          description: 'Проектування та оптимізація систем баз даних'
         },
         design: {
           name: 'Дизайн',
-          title: 'UI/UX Інструменти',
-          description: 'Роблю додатки красивими та зручними'
+          title: 'UI/UX Фреймворки',
+          description: 'Створення красивих та функціональних інтерфейсів'
+        },
+        system: {
+          name: 'Система',
+          title: 'Системне Адміністрування',
+          description: 'Управління та налаштування операційних систем і інструментів розробки'
+        },
+        tools: {
+          name: 'Інструменти',
+          title: 'Інструменти Розробки',
+          description: 'IDE, редактори та інструменти середовища розробки для ефективного кодування'
         }
       },
       summary: {
@@ -326,43 +359,43 @@ const translations = {
     // Roadmap Section
     roadmap: {
       label: 'Моя Подорож',
-      title: 'Шлях Навчання',
-      description: 'Моя подорож у вивченні програмування та комп\'ютерних наук',
+      title: 'Карта Розвитку',
+      description: 'Моя постійна подорож навчання та професійні віхи в розробці програмного забезпечення',
       timeline: {
         python: {
           date: 'Вересень 2020',
           title: 'Почав Вивчати Python',
-          description: 'Перша мова програмування - вивчив основи та фундаментальні принципи'
+          description: 'Початок моєї подорожі в програмування з основ Python'
         },
         rails: {
           date: 'Грудень 2023',
           title: 'Веб-розробка з Ruby on Rails',
-          description: 'Почав створювати веб-додатки'
+          description: 'Поглиблення у веб-розробку та вивчення фреймворку Rails'
         },
         firstProjects: {
           date: 'Січень 2024',
           title: 'Перші Rails Проекти',
-          description: 'Створив свої перші справжні додатки та вчився на помилках'
+          description: 'Робота над реальними проектами та отримання практичного досвіду'
         },
         django: {
           date: 'Серпень 2024',
           title: 'Розробка на Django',
-          description: 'Розширив знання з іншим веб-фреймворком'
+          description: 'Розширення backend навичок з фреймворком Django'
         },
         javascript: {
           date: 'Листопад 2024',
           title: 'Початок Подорожі з JavaScript',
-          description: 'Почав вивчати frontend розробку'
+          description: 'Початок frontend розробки з JavaScript'
         },
         react: {
           date: 'Січень 2025',
           title: 'Розробка на React',
-          description: 'Вивчаю сучасний frontend з React'
+          description: 'Освоєння сучасної frontend розробки з React'
         },
         degree: {
           date: 'Липень 2025',
           title: 'Ступінь Бакалавра',
-          description: 'Закінчив з дипломом комп\'ютерних наук'
+          description: 'Отримав ступінь бакалавра з комп\'ютерних наук'
         }
       },
       stats: {
@@ -375,8 +408,8 @@ const translations = {
     // Contact Section
     contact: {
       label: 'Зв\'язатися',
-      title: 'Давайте Знайомитися',
-      description: 'Не соромтеся звертатися, якщо хочете поговорити про програмування, проекти чи можливості',
+      title: 'Давайте Співпрацювати',
+      description: 'Готові до співпраці? Давайте обговоримо ваш наступний проект та втілимо ваші ідеї',
       platforms: {
         github: 'GitHub',
         linkedin: 'LinkedIn',
@@ -387,15 +420,16 @@ const translations = {
 
     // Footer
     footer: {
-      copyright: '© 2025 Барджеєв Антон. Створено з пристрастю до навчання.',
+      copyright: '© 2025 Барджеєв Антон. Створено з пристрастю та сучасними технологіями.',
       status: {
-        available: 'Відкритий до можливостей',
-        remote: 'Відкритий до віддаленої роботи'
+        available: 'Доступний для нових проектів',
+        remote: 'Підтримую віддалену роботу'
       }
     },
 
     // Loading & Common
     common: {
+      loading: 'Завантаження...',
       loadingProjects: 'Завантаження проектів...'
     }
   },
@@ -423,20 +457,24 @@ const translations = {
         learning: 'Ciągle Się Uczę',
         creative: 'Kreatywnie Myślę',
         motivated: 'Zmotywowany'
+      },
+      buttons: {
+        viewWork: 'Zobacz Moje Prace',
+        getInTouch: 'Skontaktuj Się'
       }
     },
 
     // Projects Section
     projects: {
       label: 'Portfolio',
-      title: 'Moje Projekty',
-      description: 'Projekty, które stworzyłem podczas nauki i praktyki programowania',
+      title: 'Wybrane Projekty',
+      description: 'Kolekcja projektów pokazujących moje umiejętności i pasję do programowania',
       refreshButton: 'Odśwież Dane GitHub',
       refreshing: 'Odświeżanie...',
       clickDetails: 'Kliknij po szczegóły',
       status: {
-        production: 'Działający',
-        development: 'W Trakcie',
+        production: 'Produkcja',
+        development: 'Aktywny Rozwój',
         completed: 'Ukończone',
         archived: 'Zarchiwizowane'
       },
@@ -461,6 +499,9 @@ const translations = {
         projectDetails: 'Szczegóły Projektu',
         category: 'Kategoria',
         created: 'Utworzone',
+        size: 'Rozmiar',
+        license: 'Licencja',
+        topics: 'Tematy',
         liveDemo: 'Demo Na Żywo',
         viewCode: 'Zobacz Kod'
       },
@@ -470,6 +511,7 @@ const translations = {
         watchers: 'Obserwatorzy',
         primaryLanguage: 'Główny Język',
         lastCommit: 'Ostatni Commit',
+        openIssues: 'Otwarte Problemy'
       },
       actions: {
         code: 'Kod',
@@ -480,36 +522,46 @@ const translations = {
     // Skills Section
     skills: {
       label: 'Umiejętności',
-      title: 'Co Umiem',
-      description: 'Technologie, których się nauczyłem i z którymi pracowałem',
+      title: 'Ekspertyza Techniczna',
+      description: 'Technologie i narzędzia, których używam do realizacji pomysłów',
       programmingLanguages: 'Języki Programowania',
-      technicalExpertise: 'Umiejętności Techniczne',
+      technicalExpertise: 'Ekspertyza Techniczna',
       levels: {
-        expert: 'Pewny Siebie',
-        advanced: 'zaawansowany',
-        intermediate: 'pośredn',
+        expert: 'Ekspert',
+        advanced: 'Zaawansowany',
+        intermediate: 'Średniozaawansowany',
         beginner: 'Początkujący'
       },
       categories: {
         backend: {
           name: 'Backend',
           title: 'Rozwój Serwerowy',
-          description: 'Budowanie części aplikacji działającej za kulisami'
+          description: 'Budowanie solidnych i skalowalnych aplikacji serwerowych'
         },
         frontend: {
           name: 'Frontend',
           title: 'Rozwój Interfejsów',
-          description: 'Tworzenie tego, co użytkownicy widzą i z czym wchodzą w interakcję'
+          description: 'Tworzenie interaktywnych i responsywnych doświadczeń użytkownika'
         },
         database: {
           name: 'Baza Danych',
           title: 'Zarządzanie Danymi',
-          description: 'Przechowywanie i organizowanie informacji'
+          description: 'Projektowanie i optymalizacja systemów baz danych'
         },
         design: {
           name: 'Design',
-          title: 'Narzędzia UI/UX',
-          description: 'Sprawianie, żeby aplikacje wyglądały dobrze i działały sprawnie'
+          title: 'Frameworki UI/UX',
+          description: 'Tworzenie pięknych i funkcjonalnych interfejsów'
+        },
+        system: {
+          name: 'System',
+          title: 'Administracja Systemowa',
+          description: 'Zarządzanie i konfiguracja systemów operacyjnych oraz narzędzi programistycznych'
+        },
+        tools: {
+          name: 'Narzędzia',
+          title: 'Narzędzia Programistyczne',
+          description: 'IDE, edytory i narzędzia środowiska programistycznego dla efektywnego kodowania'
         }
       },
       summary: {
@@ -522,43 +574,43 @@ const translations = {
     // Roadmap Section
     roadmap: {
       label: 'Moja Droga',
-      title: 'Ścieżka Nauki',
-      description: 'Moja podróż w nauce programowania i informatyki',
+      title: 'Mapa Rozwoju',
+      description: 'Moja ciągła podróż w nauce i kamienie milowe w rozwoju oprogramowania',
       timeline: {
         python: {
           date: 'Wrzesień 2020',
           title: 'Rozpocząłem Naukę Python',
-          description: 'Pierwszy język programowania - nauczyłem się podstaw i fundamentów'
+          description: 'Początek mojej podróży programistycznej z podstawami Python'
         },
         rails: {
           date: 'Grudzień 2023',
           title: 'Rozwój Web z Ruby on Rails',
-          description: 'Zacząłem budować aplikacje webowe'
+          description: 'Zagłębianie się w rozwój web i nauka frameworka Rails'
         },
         firstProjects: {
           date: 'Styczeń 2024',
           title: 'Pierwsze Projekty Rails',
-          description: 'Stworzyłem swoje pierwsze prawdziwe aplikacje i uczyłem się na błędach'
+          description: 'Praca nad rzeczywistymi projektami i zdobywanie praktycznego doświadczenia'
         },
         django: {
           date: 'Sierpień 2024',
           title: 'Rozwój Django',
-          description: 'Poszerzyłem wiedzę o kolejny framework webowy'
+          description: 'Rozszerzanie umiejętności backend z frameworkiem Django'
         },
         javascript: {
           date: 'Listopad 2024',
           title: 'Początek Podróży z JavaScript',
-          description: 'Zacząłem uczyć się rozwoju frontend'
+          description: 'Rozpoczęcie rozwoju frontend z JavaScript'
         },
         react: {
           date: 'Styczeń 2025',
           title: 'Rozwój React',
-          description: 'Uczę się nowoczesnego frontend z React'
+          description: 'Opanowywanie nowoczesnego rozwoju frontend z React'
         },
         degree: {
           date: 'Lipiec 2025',
           title: 'Tytuł Licencjata',
-          description: 'Ukończyłem studia z tytułem licencjata informatyki'
+          description: 'Otrzymałem tytuł licencjata z informatyki'
         }
       },
       stats: {
@@ -571,8 +623,8 @@ const translations = {
     // Contact Section
     contact: {
       label: 'Skontaktuj Się',
-      title: 'Nawiążmy Kontakt',
-      description: 'Śmiało skontaktuj się, jeśli chcesz porozmawiać o programowaniu, projektach czy możliwościach',
+      title: 'Nawiążmy Współpracę',
+      description: 'Gotowy na współpracę? Porozmawiajmy o Twoim następnym projekcie i wcielmy Twoje pomysły w życie',
       platforms: {
         github: 'GitHub',
         linkedin: 'LinkedIn',
@@ -583,15 +635,16 @@ const translations = {
 
     // Footer
     footer: {
-      copyright: '© 2025 Bardzheiev Anton. Stworzone z pasją do nauki.',
+      copyright: '© 2025 Bardzheiev Anton. Stworzone z pasją i nowoczesnymi technologiami.',
       status: {
-        available: 'Otwarty na możliwości',
-        remote: 'Otwarty na pracę zdalną'
+        available: 'Dostępny dla nowych projektów',
+        remote: 'Praca zdalna mile widziana'
       }
     },
 
     // Loading & Common
     common: {
+      loading: 'Ładowanie...',
       loadingProjects: 'Ładowanie projektów...'
     }
   }
