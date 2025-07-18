@@ -101,24 +101,57 @@ const ProjectsSection = () => {
   };
 
   const ProjectModal = ({ project, onClose }) => {
+    const gitStats = project?.github_stats;
+
+    // Handle Escape key press and body scroll lock
+    useEffect(() => {
+      if (!project) return;
+
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+
+      const handleEscape = (event) => {
+        if (event.key === 'Escape') {
+          onClose();
+        }
+      };
+
+      document.addEventListener('keydown', handleEscape);
+
+      // Cleanup function to restore scroll
+      return () => {
+        document.body.style.overflow = 'unset';
+        document.removeEventListener('keydown', handleEscape);
+      };
+    }, [project, onClose]);
+
+    // Handle click outside modal
+    const handleBackdropClick = (event) => {
+      if (event.target === event.currentTarget) {
+        onClose();
+      }
+    };
+
     if (!project) return null;
-    const gitStats = project.github_stats;
 
     return (
-      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div className="bg-white dark:bg-slate-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 dark:border-slate-700 shadow-2xl">
+      <div
+        className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-6 pt-20"
+        onClick={handleBackdropClick}
+      >
+        <div className="bg-white dark:bg-slate-900 rounded-3xl max-w-5xl w-full max-h-[85vh] overflow-y-auto border border-slate-200 dark:border-slate-700 shadow-2xl transform transition-all duration-300 scale-100 mx-4">
           {/* Header */}
-          <div className="relative p-6 border-b border-slate-200 dark:border-slate-700">
+          <div className="relative p-8 border-b border-slate-200 dark:border-slate-700">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
-                  <Code className="text-white" size={24} />
+                <div className="w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <Code className="text-white" size={28} />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
                     {project.name}
                   </h2>
-                  <div className="flex items-center gap-2 mt-1">
+                  <div className="flex items-center gap-2 mt-2">
                     <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(project.status)}`}>
                       {getStatusDisplayName(project.status)}
                     </span>
@@ -134,15 +167,15 @@ const ProjectsSection = () => {
               </div>
               <button
                 onClick={onClose}
-                className="w-10 h-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-full flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                className="w-12 h-12 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-full flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-md"
               >
-                <X size={20} />
+                <X size={24} />
               </button>
             </div>
           </div>
 
           {/* Content */}
-          <div className="p-6">
+          <div className="p-8">
             <div className="grid lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2 space-y-6">
                 <div>
@@ -326,15 +359,15 @@ const ProjectsSection = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-4 mt-8 pt-6 border-t border-slate-200 dark:border-slate-700">
+            <div className="flex gap-4 mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
               {project.demo_url && (
                 <a
                   href={project.demo_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 hover:scale-105 font-medium"
+                  className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 hover:scale-105 font-medium shadow-lg"
                 >
-                  <Play size={18} />
+                  <Play size={20} />
                   {t('projects.modal.liveDemo')}
                 </a>
               )}
@@ -342,9 +375,9 @@ const ProjectsSection = () => {
                 href={project.github_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-105 font-medium"
+                className="flex items-center gap-2 px-8 py-4 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-105 font-medium shadow-lg"
               >
-                <Github size={18} />
+                <Github size={20} />
                 {t('projects.modal.viewCode')}
               </a>
             </div>
@@ -356,7 +389,7 @@ const ProjectsSection = () => {
 
   if (loading) {
     return (
-      <section id="projects" className="py-20 transition-all duration-300">
+      <section id="projects" className="py-20 pt-32 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="animate-spin w-8 h-8 border-2 border-cyan-500 border-t-transparent rounded-full mx-auto"></div>
@@ -368,7 +401,7 @@ const ProjectsSection = () => {
   }
 
   return (
-    <section id="projects" className="py-20 transition-all duration-300">
+    <section id="projects" className="py-20 pt-32 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
