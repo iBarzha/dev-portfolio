@@ -113,14 +113,14 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" className="relative min-h-screen flex items-center justify-center overflow-hidden theme-transition">
+    <section id="about" className="relative min-h-screen flex items-start justify-center overflow-hidden theme-transition pt-[20vh]">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-3 mb-4">
               <Sparkles className="text-cyan-500 animate-pulse" size={24} />
@@ -129,36 +129,42 @@ const AboutSection = () => {
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-tight mb-6 theme-transition">
-              {t('about.title')}{' '}
-              <TypingAnimation
-                words={t('about.roles')}
-                className="bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 bg-clip-text text-transparent"
-              />
-            </h1>
+            {/* Фиксированная высота для заголовка чтобы избежать движения */}
+            <div className="min-h-[120px] sm:min-h-[140px] lg:min-h-[160px] flex flex-col justify-start">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight theme-transition">
+                {t('about.title')}{' '}
+                <TypingAnimation
+                  words={t('about.roles')}
+                  className="bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 bg-clip-text text-transparent"
+                />
+              </h1>
+            </div>
 
-            <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl theme-transition">
-              {t('about.description')}
-            </p>
+            {/* Увеличенный отступ между заголовком и описанием */}
+            <div>
+              <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl theme-transition">
+                {t('about.description')}
+              </p>
 
-            <div className="flex flex-wrap gap-4 mb-8">
-              <div className="flex items-center gap-2 light-surface px-4 py-2 rounded-full shadow-lg backdrop-blur-sm theme-transition">
-                <Code className="text-cyan-500" size={16} />
-                <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">
-                  {t('about.badges.learning')}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 light-surface px-4 py-2 rounded-full shadow-lg backdrop-blur-sm theme-transition">
-                <Palette className="text-purple-500" size={16} />
-                <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">
-                  {t('about.badges.creative')}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 light-surface px-4 py-2 rounded-full shadow-lg backdrop-blur-sm theme-transition">
-                <Zap className="text-yellow-500" size={16} />
-                <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">
-                  {t('about.badges.motivated')}
-                </span>
+              <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex items-center gap-2 light-surface px-4 py-2 rounded-full shadow-lg backdrop-blur-sm theme-transition">
+                  <Code className="text-cyan-500" size={16} />
+                  <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">
+                    {t('about.badges.learning')}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 light-surface px-4 py-2 rounded-full shadow-lg backdrop-blur-sm theme-transition">
+                  <Palette className="text-purple-500" size={16} />
+                  <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">
+                    {t('about.badges.creative')}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 light-surface px-4 py-2 rounded-full shadow-lg backdrop-blur-sm theme-transition">
+                  <Zap className="text-yellow-500" size={16} />
+                  <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">
+                    {t('about.badges.motivated')}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
