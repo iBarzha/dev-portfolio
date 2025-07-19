@@ -1,3 +1,5 @@
 .idea/
 .venv/
 backend/sqlite.db
+backend/.env
+*.env

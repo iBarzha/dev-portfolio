@@ -3,9 +3,9 @@ Production settings for PythonAnywhere deployment
 """
 from .settings import *
 import os
+from decouple import config
 
-
-SECRET_KEY = '-ta3l+7on=+3$75x&&b1poke7tt6+vl1+u7c+n2zx-&ez&*l#_'
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-fallback-key-for-development-only')
 
 DEBUG = False
 
@@ -36,14 +36,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
 
-
 CORS_ALLOW_CREDENTIALS = True
-
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'DENY'
-
 
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = True
