@@ -129,7 +129,7 @@ const AboutSection = () => {
               </span>
             </div>
 
-            {/* Фиксированная высота для заголовка чтобы избежать движения */}
+            {/* Fixed height for header to avoid movement */}
             <div className="min-h-[120px] sm:min-h-[140px] lg:min-h-[160px] flex flex-col justify-start">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight theme-transition">
                 {t('about.title')}{' '}
@@ -140,7 +140,7 @@ const AboutSection = () => {
               </h1>
             </div>
 
-            {/* Увеличенный отступ между заголовком и описанием */}
+            {/* Increased spacing between header and description */}
             <div>
               <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl theme-transition">
                 {t('about.description')}

@@ -1,20 +1,7 @@
 import { useEffect, useState } from 'react';
-import {
-  Globe,
-  Github,
-  ExternalLink,
-  Star,
-  GitFork,
-  Eye,
-  Clock,
-  Code,
-  Play,
-  GitCommit,
-  Zap,
-  X,
-  RefreshCw
-} from 'lucide-react';
+import {Globe, Github, Star, GitFork, Eye, Clock, Code, Play, Zap, X, RefreshCw} from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import config from '../config'; // Fixed import path
 
 const ProjectsSection = () => {
   const { t, language } = useLanguage(); // Get current language
@@ -26,7 +13,7 @@ const ProjectsSection = () => {
   const fetchProjects = async () => {
     try {
       // Add language parameter to API call
-      const response = await fetch(`http://127.0.0.1:8000/api/projects/?language=${language}`);
+      const response = await fetch(`${config.API_BASE_URL}/api/projects/?language=${language}`);
       if (response.ok) {
         const data = await response.json();
         setProjects(data);
@@ -43,7 +30,7 @@ const ProjectsSection = () => {
   const refreshGitHubData = async () => {
     setRefreshing(true);
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/projects/refresh-github/', {
+      const response = await fetch(`${config.API_BASE_URL}/api/projects/refresh-github/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
